@@ -15,13 +15,15 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *end, *ptr;
 	unsigned int len = 0;
+	size_t size;
 
 	ptr = *head; /*so that you can traverse the linked list*/
 
 	while (str[len])
 		len++;
 
-	end = malloc(sizeof(list_t));
+	size = list_len(*head);
+	end = malloc(size);
 	if (!end) /*Mem. alloc. failed*/
 		return (NULL);
 
