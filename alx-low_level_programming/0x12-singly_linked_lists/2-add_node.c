@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h> /*NOT USED ORIGINALLY*/
 
 /**
  * add_node - adds a new node at the beginnig of a list...
@@ -15,11 +16,14 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new; /*pointer to the new node*/
 	unsigned int len = 0;
+	size_t size;
 
 	while (str[len])
 		len++; /*To get the string length*/
 
-	new = malloc(sizeof(list_t));
+	size = list_len(*head);
+	printf("The size: %lu\n", size);
+	new = malloc(size);
 	if (!new) /*Mem alloc. failed. Insufficient memory*/
 		return (NULL);
 
