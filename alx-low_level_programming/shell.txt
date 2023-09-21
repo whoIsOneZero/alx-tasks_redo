@@ -1,0 +1,29 @@
+### MAGDY ###
+1. 
+2. _atoi.c
+3. builtin.c
+4. builtin1.c
+5. environ.c
+6. errors.c
+7. errors1.c
+8. exits.c
+9. getLine.c
+10. getenv.c
+11. getinfo.c
+12. history.c
+13. lists.c
+
+### Shallom ###
+14. lists1.c
+15. list_to_strings
+16. print_list
+17. main.c
+18. memory.c
+19. parser.c
+20. realloc.c
+21. shell.h
+22. shell_loop.c
+23. string.c
+24. string1.c
+25. tokenizer.c
+26. vars.c
