@@ -1,0 +1,32 @@
+1. String Concatenation (+): You can concatenate strings using the +
+operator. For example:
+
+str1 = "Hello"
+str2 = "World"
+result = str1 + ", " + str2
+print(result)  # Output: "Hello, World"
+
+2. String Formatting (str.format() or f-strings): You can use string formatting to insert values into a string template. This is especially useful for creating formatted strings with placeholders:
+
+name = "Alice"
+age = 30
+formatted_str = "My name is {} and I am {} years old.".format(name, age)
+print(formatted_str)  # Output: "My name is Alice and I am 30 years old."
+
+Alternatively, you can use f-strings (as you did in your original script) for string formatting:
+name = "Alice"
+age = 30
+formatted_str = f"My name is {name} and I am {age} years old."
+print(formatted_str)  # Output: "My name is Alice and I am 30 years old."
+
+3. Joining Strings with .join(): You can use the .join() method to concatenate a list of strings with a delimiter:
+
+words = ["Hello", "world", "!"]
+combined_str = " ".join(words)
+print(combined_str)  # Output: "Hello world !
+
+4. String Repetition with str * n: As you initially used, you can use the * operator to repeat a string n times:
+
+text = "Repeat me "
+repeated_text = text * 3
+print(repeated_text)  # Output: "Repeat me Repeat me Repeat me "
