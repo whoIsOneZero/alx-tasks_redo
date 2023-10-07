@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def print_last_digit(number):
-    last =  abs(number) % 10  # get the absolute value
+    last = abs(number) % 10  # get the absolute value
 
     print(last, end="")
     return (last)
