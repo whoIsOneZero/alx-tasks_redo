@@ -7,6 +7,6 @@ def uppercase(str):
         if (value > 96 and value < 123):
             # change to uppercase here
             alpha = chr(value - 32)
-            
+
         print("{}".format(alpha), end="")  # print all UPPERCASE
     print("")
