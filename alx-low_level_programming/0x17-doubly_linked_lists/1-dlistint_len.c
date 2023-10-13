@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * print_dlistint - prints all the elements of a linked list (dlistint_t)
- * @h: pointer to the head of the list
+ * print_dlistint - gets num of elements of a linked list (dlistint_t)
+ * @head: pointer to the head of the list
  * Return: the number of nodes in the list
  */
 
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	int num;
 
@@ -21,7 +21,6 @@ size_t print_dlistint(const dlistint_t *h)
 	/* (h!= NULL) not (h->next != NULL) */
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		num++;
 		h = h->next; /*Point to next node */
 	}
