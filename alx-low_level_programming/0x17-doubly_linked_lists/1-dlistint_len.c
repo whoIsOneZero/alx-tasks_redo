@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_dlistint - gets num of elements of a linked list (dlistint_t)
+ * print_dlistint - gets num of elements of in a linked list (dlistint_t)
  * @head: pointer to the head of the list
  * Return: the number of nodes in the list
  */
