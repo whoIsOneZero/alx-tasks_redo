@@ -19,20 +19,20 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	/* Initialize new node */
 	new->n = n;
-	new->next = NULL; /* fixed the valgrind errors */
+	new->next = NULL; /*!! fixed the valgrind errors */
 	new->prev = NULL;
 
 	if (ptr == NULL) /*Empty linked list*/
 	{
 		/*Set 'new' as the only node and update *head */
-		new->next = NULL;
+		/*new->next = NULL;*/
 		*head = new;
 	}
 
 	else /* Non-empty linked list */
 	{
 		/* Traverse to the end of the original list*/
-		while (ptr->next != NULL)
+		while (ptr->next != NULL) /*!! Possible cause of error */
 			ptr = ptr->next;
 
 
