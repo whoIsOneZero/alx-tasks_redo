@@ -12,9 +12,9 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int position = 0;
-	dlistint_t *ptr = h; /*For traversing the list*/
-	dlistint_t temp = NULL;
-	dlistint_t new = NULL;
+	dlistint_t *ptr = *h; /*For traversing the list*/
+	dlistint_t temp;
+	dlistint_t new;
 
 	if (h == NULL)   /*Empty linked list*/
 		return (NULL);
