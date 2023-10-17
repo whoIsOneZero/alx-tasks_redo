@@ -1,39 +1,54 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index -  inserts a new node at a given position
- * @h: a pointer to the h of the linked list
- * @idx: index of the node to be gotten
+ * insert_dnodeint_at_index - inserts a new node at
+ * a given position
  *
- * Return: [SUCCESS]: address of the new node, [CANNOT ADD]: NULL
- *
+ * @h: head of the list
+ * @idx: index of the new node
+ * @n: value of the new node
+ * Return: the address of the new node, or NULL if it failed
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int position = 0;
-	dlistint_t *ptr = *h; /*For traversing the list*/
-	dlistint_t temp;
-	dlistint_t new;
+	dlistint_t *new;
+	dlistint_t *head;
+	unsigned int i;
 
-	if (h == NULL)   /*Empty linked list*/
-		return (NULL);
-
-	while (h->prev != NULL)
-		h = h->prev;   /* Go to the beginning */
-
-	while (position != idx)
+	new = NULL;  /*Empty linked list*/
+	if (idx == 0)
+		new = add_dnodeint(h, n); /*Insert node at the beginning*/
+	else
 	{
-		ptr = ptr->next;
-		position++;
+		head = *h;
+		i = 1;  /*To traverse the list starting at index 1*/
+		if (head != NULL)
+			while (head->prev != NULL)
+				head = head->prev;  /*Go to the first node*/
+		while (head != NULL)
+		{
+			if (i == idx) /* Current node at desired index? */
+			{
+				if (head->next == NULL) /*Only one node present*/
+					new = add_dnodeint_end(h, n);
+				else
+				{
+					new = malloc(sizeof(dlistint_t));
+					if (new != NULL)
+					{
+						new->n = n;
+						new->next = head->next;
+						new->prev = head;
+						head->next->prev = new;
+						head->next = new;
+					}
+				}
+				break; /*New node created. Exit loop */
+			}
+			head = head->next;
+			i++;  /* next node index */
+		}
 	}
-	/* positon == idx*/
-	temp = ptr->next;  /*Node just after the  desired index*/
-	ptr->next = new;
-	temp->prev = new;
 
-	new->next = temp;
-	new->prev = ptr;
-
-	return (h);
+	return (new);
 }
