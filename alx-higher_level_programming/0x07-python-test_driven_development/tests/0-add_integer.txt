@@ -1,0 +1,15 @@
+The ``add_integer`` module
+==========================
+
+Usage
+------
+
+This is an example text file in reStructuredText format.
+First import ``0-add_integer``
+
+    >>> import 0-add_integer
+
+Now use it:
+
+    >>> factorial(6)
+    120
