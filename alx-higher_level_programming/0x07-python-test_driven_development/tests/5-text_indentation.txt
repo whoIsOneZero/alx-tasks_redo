@@ -1,0 +1,45 @@
+================================
+How to Use 5-text_indentation.py
+================================
+
+This module defines a text-indentation function ``text_indentation(text)``.
+
+Usage
+=====
+
+Text is printed with two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+
+::
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hi?")  # doctest: +NORMALIZE_WHITESPACE
+Hi?
+<BLANKLINE>
+
+>>> text_indentation("   No spaces at the beginning.")  # doctest: +NORMALIZE_WHITESPACE
+No spaces at the beginning.
+
+>>> text_indentation("           ")  # doctest: +NORMALIZE_WHITESPACE
+>>> text_indentation("Hey there.       ")  # doctest: +NORMALIZE_WHITESPACE
+Hey there.
+
+>>> text_indentation("    Also, no spaces here.    And here too.   ")  # doctest: +NORMALIZE_WHITESPACE
+Also, no spaces here.
+<BLANKLINE>
+And here too.
+<BLANKLINE>
+
+>>> text_indentation("More new lines\n ")  # doctest: +NORMALIZE_WHITESPACE
+More new lines
+>>> text_indentation("More new \nlines.")  # doctest: +NORMALIZE_WHITESPACE
+More new
+lines.
+<BLANKLINE>
+
+>>> text_indentation("More new:\nlines.")  # doctest: +NORMALIZE_WHITESPACE
+More new:
+<BLANKLINE>
+<BLANKLINE>
+lines.
+<BLANKLINE>
