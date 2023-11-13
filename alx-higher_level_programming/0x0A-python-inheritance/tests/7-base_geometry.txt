@@ -36,5 +36,6 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 
 >>> bg.integer_validator("height", 0)
 Traceback (most recent call last):
+	...
 ValueError: <name> must be greater than 0
 
