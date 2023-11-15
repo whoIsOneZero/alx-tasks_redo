@@ -35,3 +35,6 @@ typedef struct hash_table_s
 } hash_table_t;
 
 # endif /*HASH_TABLE*/
+
+/*->> Function Prototypes <<-*/
+hash_table_t *hash_table_create(unsigned long int size);
