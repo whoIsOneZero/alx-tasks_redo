@@ -23,6 +23,8 @@ hash_node_t* create_item(char* key, char* value)
 
     strcpy(item->key, key);
     strcpy(item->value, value);
+
+    return (item);
 }
 
 /**
@@ -33,6 +35,8 @@ hash_node_t* create_item(char* key, char* value)
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
+    unsigned long int i;
+
     hash_table_t* table = (hash_table_t*) malloc(sizeof(hash_table_t));
     if (table == NULL)
         return (NULL);
@@ -45,7 +49,7 @@ hash_table_t *hash_table_create(unsigned long int size)
         return (NULL);
     }
 
-    for (int i = 0; i < table->size; i++)
+    for (i = 0; i < table->size; i++)
         table->array[i] = NULL;
 
     return (table);
