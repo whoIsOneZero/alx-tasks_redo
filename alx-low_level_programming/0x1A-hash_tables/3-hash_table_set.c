@@ -32,10 +32,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	/*No match found*/
-	new = malloc(sizeof(hast_node_t));
+	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 	{
-		free(new_copy); /*mem. alloc failed*/
+		free(value_copy); /*mem. alloc failed*/
 		return (0);
 	}
 
