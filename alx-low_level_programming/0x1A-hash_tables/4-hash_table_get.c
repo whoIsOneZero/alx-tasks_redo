@@ -20,8 +20,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 
 	node = ht->array[index];
-	while (node && strcmp(node->key, key) != 0) /*Until reach end or find a match*/
+
+	/*Travers the list at that slot until reach end or find a match*/
+	while (node && strcmp(node->key, key) != 0)
 		node = node->next;
 
-	return((node == NULL) ? NULL: node->value); /*NULL - key doesn't exist*/
+	return ((node == NULL) ? NULL : node->value); /*NULL - key doesn't exist*/
 }
