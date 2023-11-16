@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new;
 	char *value_copy;
 
-       	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
 	value_copy = strdup(value);
@@ -30,7 +30,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (1);
 		}
 	}
-
 	/*No match found*/
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
@@ -38,7 +37,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(value_copy); /*mem. alloc failed*/
 		return (0);
 	}
-
 	/*Allocate new node*/
 	new->key = strdup(key);
 	if (new->key == NULL) /*mem. alloc failed*/
@@ -50,6 +48,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = value_copy;
 	new->next = ht->array[index];
 	ht->array[index] = new;
-
 	return (1);
 }
