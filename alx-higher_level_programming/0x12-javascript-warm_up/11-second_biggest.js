@@ -1,14 +1,14 @@
 #!/usr/bin/node
-arg_list = process.argv.slice(2);
-if (arg_list.length <= 2) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  let max_num = parseInt(arg_list[2]);
-  arg_list.forEach(element => {
-    val = parseInt(element);
-    if (val > max_num) {
-      max_num = val;
-    }
+  // Convert from array of strings to array of numbers
+  let numbersArray = process.argv.slice(2).map(function(str){
+    return parseInt(str);
   });
-  console.log(max_num);
+  // Sort in descending order
+  numbersArray.sort(function(a, b){
+    return b - a;
+  });
+  console.log(numbersArray[1]);
 }
